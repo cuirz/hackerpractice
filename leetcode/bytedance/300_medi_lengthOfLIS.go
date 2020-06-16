@@ -13,24 +13,40 @@ package main
 //你算法的时间复杂度应该为 O(n2) 。
 //进阶: 你能将算法的时间复杂度降低到 O(n log n) 吗?
 
-//思路： 动态规划，二分查找
+//思路： 动态规划
+//思路： 贪心 + 二分查找
 
 func lengthOfLIS(nums []int) int {
 	n := len(nums)
+	if n < 1 {
+		return 0
+	}
 	dp := make([]int, n)
-	var search func() int
-	search = func() int {
-
+	dp[0] = nums[0]
+	length := 1
+	l, r := 0, 0
+	for i := 1; i < n; i++ {
+		if nums[i] > dp[length-1] {
+			dp[length] = nums[i]
+			length++
+		} else {
+			l, r = 0, length-1
+			for l < r {
+				mid := (l + r - 1) / 2
+				if dp[mid] < nums[i] {
+					l = mid + 1
+				} else {
+					r = mid
+				}
+			}
+			dp[l] = nums[i]
+		}
 	}
 
-	for i := 0; i < n; i++ {
-		dp[i] = search() + 1
-	}
-
-	return dp[n-1]
+	return length
 }
 
 func main() {
-	//println(lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}))
+	println(lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}))
 	println(lengthOfLIS([]int{1, 3, 6, 7, 9, 4, 10, 5, 6}))
 }
