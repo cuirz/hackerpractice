@@ -16,5 +16,20 @@ package main
 //说明: 6个回文子串: "a", "a", "a", "aa", "aa", "aaa".
 
 func countSubstrings(s string) int {
-
+	count := 0
+	find := func(l, r int) {
+		for l > -1 && r < len(s){
+			if s[l] != s[r]{
+				break
+			}
+			l --
+			r ++
+			count ++
+		}
+	}
+	for i := 0; i < len(s); i++ {
+		find(i,i)
+		find(i,i+1)
+	}
+	return count
 }
