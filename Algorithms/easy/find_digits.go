@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"math/big"
 	"os"
 	"strconv"
 	"strings"
@@ -19,6 +20,7 @@ func findDigits(n int32) int32 {
 			count++
 		}
 	}
+	big.Int{}
 	return count
 }
 
