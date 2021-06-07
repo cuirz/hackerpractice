@@ -71,9 +71,9 @@ func findTargetSumWays(nums []int, S int) int {
 	positive := (sum + S) >> 1
 	dp := make([]int, positive+1)
 	dp[0] = 1
-	for i := 1; i <= n; i++ {
-		for j := positive; j >= nums[i-1]; j-- {
-			dp[j] = dp[j] + dp[j-nums[i-1]]
+	for i := 0; i < n; i++ {
+		for j := positive; j >= nums[i]; j-- {
+			dp[j] = dp[j] + dp[j-nums[i]]
 		}
 	}
 	return dp[positive]
