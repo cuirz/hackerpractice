@@ -28,7 +28,26 @@ package main
 //piles.length 是偶数。
 //1 <= piles[i] <= 500
 //sum(piles) 是奇数。
+
+//思路 动态规划
+// dp[i][j] 指针 i，j之间玩家拿到的石头数量之差的最大值
+// 数学  第一个有选择权的永远都是赢家
+// 所以 直接是 true
 func stoneGame(piles []int) bool {
+	n := len(piles)
+	dp := make([][]int, n)
+	for i := range dp {
+		dp[i] = make([]int, n)
+		dp[i][i] = piles[i]
+	}
+	for i := n - 2; i > -1; i-- {
+		for j := i + 1; j < n; j++ {
+			dp[i][j] = max(piles[i]-dp[i+1][j], piles[j]-dp[i][j-1])
+		}
+	}
+	return dp[0][n-1] > 0
+}
+func stoneGame2(piles []int) bool {
 	dp := make(map[[2]int][2]int)
 	var search func(l, r int) [2]int
 	search = func(l, r int) [2]int {
