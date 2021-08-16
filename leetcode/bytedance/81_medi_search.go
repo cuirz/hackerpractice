@@ -33,23 +33,6 @@ package main
 //这会影响到程序的时间复杂度吗？会有怎样的影响，为什么？
 
 func search(nums []int, target int) bool {
-	//var find func(l, r int) bool
-	//find = func(l, r int) bool {
-	//	if l == r {
-	//		return nums[l] == target
-	//	}
-	//	mid := (l + r) >> 1
-	//	if nums[mid] == target || nums[l] == target || nums[r] == target {
-	//		return true
-	//	}
-	//	if nums[r] > target && (nums[mid] > nums[r] || nums[mid] < target) ||
-	//		nums[r] < target && (nums[mid] > nums[r] && nums[mid] < target) {
-	//		return find(mid+1, r)
-	//	}
-	//	return find(l, mid-1)
-	//
-	//}
-	//return find(0, len(nums)-1)
 	l, r := 0, len(nums)-1
 	for l <= r {
 		mid := (l + r) >> 1
