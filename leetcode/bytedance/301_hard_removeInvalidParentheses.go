@@ -70,3 +70,9 @@ func removeInvalidParentheses(s string) []string {
 	}
 	return result
 }
+
+func main(){
+	println(removeInvalidParentheses("((()"))
+
+
+}
