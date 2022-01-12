@@ -30,6 +30,7 @@ import "math"
 //
 //1 <= nums.length <= 5 * 10^5
 //-2^31 <= nums[i] <= 2^31 - 1
+//
 
 func increasingTriplet(nums []int) bool {
 	n := len(nums)
