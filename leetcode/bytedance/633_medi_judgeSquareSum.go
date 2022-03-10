@@ -3,9 +3,9 @@ package main
 import "math"
 
 //633. 平方数之和
-//给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
+//给定一个非负整数c，你要判断是否存在两个整数 a 和 b，使得a2 + b2 = c 。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -28,7 +28,7 @@ import "math"
 //
 //输入：c = 1
 //输出：true
-// 
+//
 //
 //提示：
 //
@@ -50,6 +50,6 @@ func judgeSquareSum(c int) bool {
 	return false
 }
 
-func main(){
+func main() {
 	println(judgeSquareSum(5))
 }

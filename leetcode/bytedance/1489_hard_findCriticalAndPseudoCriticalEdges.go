@@ -3,13 +3,13 @@ package main
 import "sort"
 
 //1489. 找到最小生成树里的关键边和伪关键边
-//给你一个 n 个点的带权无向连通图，节点编号为 0 到 n-1 ，同时还有一个数组 edges ，其中 edges[i] = [fromi, toi, weighti] 表示在 fromi 和 toi 节点之间有一条带权无向边。最小生成树 (MST) 是给定图中边的一个子集，它连接了所有节点且没有环，而且这些边的权值和最小。
+//给你一个 n个点的带权无向连通图，节点编号为 0到 n-1，同时还有一个数组 edges，其中 edges[i] = [fromi, toi, weighti]表示在fromi和toi节点之间有一条带权无向边。最小生成树(MST) 是给定图中边的一个子集，它连接了所有节点且没有环，而且这些边的权值和最小。
 //
 //请你找到给定图中最小生成树的所有关键边和伪关键边。如果从图中删去某条边，会导致最小生成树的权值和增加，那么我们就说它是一条关键边。伪关键边则是可能会出现在某些最小生成树中但不会出现在所有最小生成树中的边。
 //
 //请注意，你可以分别以任意顺序返回关键边的下标和伪关键边的下标。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -29,7 +29,7 @@ import "sort"
 //输入：n = 4, edges = [[0,1,1],[1,2,1],[2,3,1],[0,3,1]]
 //输出：[[],[0,1,2,3]]
 //解释：可以观察到 4 条边都有相同的权值，任选它们中的 3 条可以形成一棵 MST 。所以 4 条边都是伪关键边。
-// 
+//
 //
 //提示：
 //
@@ -37,8 +37,8 @@ import "sort"
 //1 <= edges.length <= min(200, n * (n - 1) / 2)
 //edges[i].length == 3
 //0 <= fromi < toi < n
-//1 <= weighti <= 1000
-//所有 (fromi, toi) 数对都是互不相同的。
+//1 <= weighti<= 1000
+//所有 (fromi, toi)数对都是互不相同的。
 
 func findCriticalAndPseudoCriticalEdges(n int, edges [][]int) [][]int {
 	type connect struct {
@@ -97,7 +97,7 @@ func findCriticalAndPseudoCriticalEdges(n int, edges [][]int) [][]int {
 		}
 		for i := 0; i < len(nodes); i += 2 {
 			v, w := nodes[i], nodes[i+1]
-			us.union(v,w)
+			us.union(v, w)
 			graph[v], graph[w] = nil, nil
 			dfn[v], dfn[w] = 0, 0
 		}

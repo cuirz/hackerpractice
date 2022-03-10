@@ -9,7 +9,7 @@ import "sort"
 //
 //执行最多 k 次操作后，返回数组中最高频元素的 最大可能频数 。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -29,7 +29,7 @@ import "sort"
 //
 //输入：nums = [3,9,6], k = 2
 //输出：1
-// 
+//
 //
 //提示：
 //
@@ -42,7 +42,7 @@ func maxFrequency(nums []int, k int) int {
 	sort.Ints(nums)
 	n := len(nums)
 	l, r := 0, 1
-	diff,maxx := 0,1
+	diff, maxx := 0, 1
 
 	for l < r && r < n {
 		diff += (nums[r] - nums[r-1]) * (r - l)

@@ -8,7 +8,7 @@ package main
 //
 //输入：n = 1
 //输出：[[1]]
-// 
+//
 //
 //提示：
 //
@@ -26,12 +26,12 @@ func generateMatrix(n int) [][]int {
 			matrix[u][col] = index
 			index++
 		}
-		for row := u+1; row <= d; row++ {
+		for row := u + 1; row <= d; row++ {
 			matrix[row][r] = index
 			index++
 		}
 		if l < r && u < d {
-			for col := r-1; col > l; col-- {
+			for col := r - 1; col > l; col-- {
 				matrix[d][col] = index
 				index++
 			}

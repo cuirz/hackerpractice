@@ -13,7 +13,7 @@ import (
 //
 //注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -39,11 +39,11 @@ import (
 //
 //输入：orders = [["Laura","2","Bean Burrito"],["Jhon","2","Beef Burrito"],["Melissa","2","Soda"]]
 //输出：[["Table","Bean Burrito","Beef Burrito","Soda"],["2","1","1","1"]]
-// 
+//
 //
 //提示：
 //
-//1 <= orders.length <= 5 * 10^4
+//1 <=orders.length <= 5 * 10^4
 //orders[i].length == 3
 //1 <= customerNamei.length, foodItemi.length <= 20
 //customerNamei 和 foodItemi 由大小写英文字母及空格字符 ' ' 组成。
@@ -57,7 +57,7 @@ func displayTable(orders [][]string) [][]string {
 		if _, ok := menuList[v[1]]; !ok {
 			menuList[v[1]] = map[string]int{}
 		}
-		menuList[v[1]][v[2]] ++
+		menuList[v[1]][v[2]]++
 		if !menuMap[v[2]] {
 			menuMap[v[2]] = true
 			title = append(title, v[2])

@@ -17,7 +17,7 @@ package main
 //
 //提示：
 //
-//-10^7 <= num <= 10^7
+//-10^7<= num <= 10^7
 
 func convertToBase7(num int) string {
 	if num == 0 {

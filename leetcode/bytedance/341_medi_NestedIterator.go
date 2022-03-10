@@ -5,18 +5,18 @@ package main
 //
 //列表中的每一项或者为一个整数，或者是另一个列表。其中列表的元素也可能是整数或是其他列表。
 //
-// 
+//
 //
 //示例 1:
 //
 //输入: [[1,1],2,[1,1]]
 //输出: [1,1,2,1,1]
-//解释: 通过重复调用 next 直到 hasNext 返回 false，next 返回的元素的顺序应该是: [1,1,2,1,1]。
+//解释: 通过重复调用next 直到hasNext 返回 false，next返回的元素的顺序应该是: [1,1,2,1,1]。
 //示例 2:
 //
 //输入: [1,[4,[6]]]
 //输出: [1,4,6]
-//解释: 通过重复调用 next 直到 hasNext 返回 false，next 返回的元素的顺序应该是: [1,4,6]。
+//解释: 通过重复调用next直到hasNext 返回 false，next返回的元素的顺序应该是: [1,4,6]。
 
 // This is the interface that allows for creating nested lists.
 // You should not implement it, or speculate about its implementation
@@ -54,7 +54,7 @@ func Constructor(nestedList []*NestedInteger) *NestedIterator {
 		for _, v := range nested {
 			if v.IsInteger() {
 				list = append(list, v.GetInteger())
-			}else{
+			} else {
 				flatList(v.GetList())
 			}
 		}

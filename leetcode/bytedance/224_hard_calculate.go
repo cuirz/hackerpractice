@@ -3,7 +3,7 @@ package main
 //224. 基本计算器
 //实现一个基本的计算器来计算一个简单的字符串表达式 s 的值。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -17,11 +17,11 @@ package main
 //
 //输入：s = "(1+(4+5+2)-3)+(6+8)"
 //输出：23
-// 
+//
 //
 //提示：
 //
-//1 <= s.length <= 3 * 105
+//1 <= s.length <= 3* 105
 //s 由数字、'+'、'-'、'('、')'、和 ' ' 组成
 //s 表示一个有效的表达式
 
@@ -38,10 +38,10 @@ func calculate(s string) int {
 			sign = stack[len(stack)-1]
 			i++
 		case '-':
-			sign = - stack[len(stack)-1]
+			sign = -stack[len(stack)-1]
 			i++
 		case '(':
-			stack = append(stack,sign)
+			stack = append(stack, sign)
 			i++
 		case ')':
 			stack = stack[:len(stack)-1]

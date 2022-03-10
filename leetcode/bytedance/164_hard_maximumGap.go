@@ -7,12 +7,12 @@ import "sort"
 //
 //如果数组元素个数小于 2，则返回 0。
 //
-//示例 1:
+//示例1:
 //
 //输入: [3,6,9,1]
 //输出: 3
 //解释: 排序后的数组是 [1,3,6,9], 其中相邻元素 (3,6) 和 (6,9) 之间都存在最大差值 3。
-//示例 2:
+//示例2:
 //
 //输入: [10]
 //输出: 0
@@ -27,12 +27,12 @@ import "sort"
 func maximumGap(nums []int) int {
 	sort.Ints(nums)
 
-	result,pre := 0,0
-	if len(nums) > 0{
+	result, pre := 0, 0
+	if len(nums) > 0 {
 		pre = nums[0]
 	}
-	for i:=1;i<len(nums);i++{
-		result = max(result,nums[i]-pre)
+	for i := 1; i < len(nums); i++ {
+		result = max(result, nums[i]-pre)
 		pre = nums[i]
 	}
 	return result
@@ -58,7 +58,7 @@ func maximumGapBase(nums []int) (ans int) {
 		}
 		for i := n - 1; i >= 0; i-- {
 			digit := nums[i] / exp % 10
-			println(cnt[digit]-1)
+			println(cnt[digit] - 1)
 			buf[cnt[digit]-1] = nums[i]
 			cnt[digit]--
 		}
@@ -86,13 +86,13 @@ func maxarry(a ...int) int {
 	return res
 }
 
-func max(x,y int)int{
-	if x > y{
+func max(x, y int) int {
+	if x > y {
 		return x
 	}
 	return y
 }
 
-func main(){
-	println(maximumGapBase([]int{73, 22, 93, 43, 55, 14, 28, 65, 39, 81,99,45,70}))
+func main() {
+	println(maximumGapBase([]int{73, 22, 93, 43, 55, 14, 28, 65, 39, 81, 99, 45, 70}))
 }

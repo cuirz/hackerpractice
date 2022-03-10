@@ -7,7 +7,7 @@ package main
 //
 //例如，clumsy(10) = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1。然而，这些运算仍然使用通常的算术运算顺序：我们在任何加、减步骤之前执行所有的乘法和除法步骤，并且按从左到右处理乘法和除法步骤。
 //
-//另外，我们使用的除法是地板除法（floor division），所以 10 * 9 / 8 等于 11。这保证结果是一个整数。
+//另外，我们使用的除法是地板除法（floor division），所以10 * 9 / 8等于11。这保证结果是一个整数。
 //
 //实现上面定义的笨函数：给定一个整数 N，它返回 N 的笨阶乘。
 //输入：4
@@ -25,22 +25,22 @@ func clumsy(N int) int {
 	sign := 0
 	stack := []int{N}
 	N--
-	for N > 0{
-		switch sign % 4{
+	for N > 0 {
+		switch sign % 4 {
 		case 0:
 			stack[len(stack)-1] *= N
 		case 1:
 			stack[len(stack)-1] /= N
 		case 2:
-			stack = append(stack ,N)
+			stack = append(stack, N)
 		default:
-			stack = append(stack,-N)
+			stack = append(stack, -N)
 		}
 		N--
-		sign ++
+		sign++
 	}
 	var result int
-	for _,v := range stack{
+	for _, v := range stack {
 		result += v
 	}
 	return result

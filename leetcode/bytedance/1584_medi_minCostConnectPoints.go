@@ -3,11 +3,11 @@ package main
 import "sort"
 
 //1584. 连接所有点的最小费用
-//给你一个points 数组，表示 2D 平面上的一些点，其中 points[i] = [xi, yi] 。
+//给你一个points数组，表示 2D 平面上的一些点，其中points[i] = [xi, yi]。
 //
-//连接点 [xi, yi] 和点 [xj, yj] 的费用为它们之间的 曼哈顿距离 ：|xi - xj| + |yi - yj| ，其中 |val| 表示 val 的绝对值。
+//连接点[xi, yi] 和点[xj, yj]的费用为它们之间的 曼哈顿距离：|xi - xj| + |yi - yj|，其中|val|表示val的绝对值。
 //
-//请你返回将所有点连接的最小总费用。只有任意两点之间 有且仅有 一条简单路径时，才认为所有点都已连接。
+//请你返回将所有点连接的最小总费用。只有任意两点之间 有且仅有一条简单路径时，才认为所有点都已连接。
 //
 //示例 2：
 //
@@ -25,13 +25,13 @@ import "sort"
 //
 //输入：points = [[0,0]]
 //输出：0
-// 
+//
 //
 //提示：
 //
 //1 <= points.length <= 1000
-//-106 <= xi, yi <= 106
-//所有点 (xi, yi) 两两不同。
+//-106<= xi, yi <= 106
+//所有点(xi, yi)两两不同。
 
 //思路 Kruskal算法 ,并查集
 // Kruskal算法是最小生成树的经典算法
@@ -66,11 +66,11 @@ func minCostConnectPoints(points [][]int) int {
 	}
 	union := func(from, to int) bool {
 		from, to = find(from), find(to)
-		if from == to{
+		if from == to {
 			return false
 		}
-		if count[from] > count[to]{
-			from,to = to,from
+		if count[from] > count[to] {
+			from, to = to, from
 		}
 		count[to] += count[from]
 		parent[from] = to
@@ -79,7 +79,7 @@ func minCostConnectPoints(points [][]int) int {
 
 	var result int
 	for _, v := range edges {
-		if union(v.x,v.y){
+		if union(v.x, v.y) {
 			result += v.cost
 		}
 	}

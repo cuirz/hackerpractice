@@ -7,7 +7,7 @@ package main
 //
 //WordDictionary() 初始化词典对象
 //void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配
-//bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回  false 。word 中可能包含一些 '.' ，每个 . 都可以表示任何一个字母。
+//bool search(word) 如果数据结构中存在字符串与word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 '.' ，每个. 都可以表示任何一个字母。
 //
 //
 //示例：
@@ -66,13 +66,13 @@ func (this *WordDictionary) Search(word string) bool {
 		if v == '.' {
 			for i := 0; i < 26; i++ {
 				if root.Children[i] != nil {
-					if k == len(word)-1{
-						if root.Children[i].IsEnd{
+					if k == len(word)-1 {
+						if root.Children[i].IsEnd {
 							return true
 						}
 						continue
 					}
-					if root.Children[i].Search(word[k+1:]){
+					if root.Children[i].Search(word[k+1:]) {
 						return true
 					}
 				}

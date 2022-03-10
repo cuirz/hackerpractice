@@ -24,7 +24,7 @@ package main
 //["abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53"]
 //给你一个字符串 s ，如果 s 是一个 有效数字 ，请返回 true 。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -42,7 +42,7 @@ package main
 //
 //输入：s = ".1"
 //输出：true
-// 
+//
 //
 //提示：
 //
@@ -98,7 +98,7 @@ func isNumber(s string) bool {
 			CharExp: StateExp,
 		},
 		StateExp: {
-			CharNum: StateExpInt,
+			CharNum:  StateExpInt,
 			CharSign: StateExpSign,
 		},
 		StateExpSign: {

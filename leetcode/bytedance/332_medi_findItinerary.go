@@ -18,7 +18,7 @@ import "sort"
 //
 //输入: [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
 //输出: ["JFK","ATL","JFK","SFO","ATL","SFO"]
-//解释: 另一种有效的行程是 ["JFK","SFO","ATL","JFK","ATL","SFO"]。但是它自然排序更大更靠后。
+//解释: 另一种有效的行程是["JFK","SFO","ATL","JFK","ATL","SFO"]。但是它自然排序更大更靠后。
 
 //思路： 图   Hierholzer 算法 寻找欧拉回路
 func findItinerary(tickets [][]string) []string {
@@ -32,12 +32,12 @@ func findItinerary(tickets [][]string) []string {
 	}
 	var dfs func(pos string)
 	dfs = func(pos string) {
-		for dic[pos] != nil && len(dic[pos]) > 0{
+		for dic[pos] != nil && len(dic[pos]) > 0 {
 			next := dic[pos][0]
 			dic[pos] = dic[pos][1:]
 			dfs(next)
 		}
-		result = append(result,pos)
+		result = append(result, pos)
 	}
 	dfs("JFK")
 	n := len(result)

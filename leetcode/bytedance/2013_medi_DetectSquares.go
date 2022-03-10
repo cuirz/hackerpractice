@@ -41,7 +41,7 @@ package main
 //
 //point.length == 2
 //0 <= x, y <= 1000
-//调用 add 和 count 的 总次数 最多为 5000
+//调用add 和 count 的 总次数 最多为 5000
 
 type DetectSquares struct {
 	dic map[int]map[int]int

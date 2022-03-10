@@ -14,7 +14,7 @@ import (
 //
 //如果数量大于 1，原子后会跟着数字表示原子的数量。如果数量等于 1 则不会跟数字。例如，H2O 和 H2O2 是可行的，但 H1O2 这个表达是不可行的。
 //
-//两个化学式连在一起是新的化学式。例如 H2O2He3Mg4 也是化学式。
+//两个化学式连在一起是新的化学式。例如H2O2He3Mg4 也是化学式。
 //
 //一个括号中的化学式和数字（可选择性添加）也是化学式。例如 (H2O2) 和 (H2O2)3 是化学式。
 //
@@ -80,7 +80,7 @@ func countOfAtoms(formula string) string {
 			if len(stack) > 0 {
 				count *= stack[len(stack)-1]
 			}
-			if dic[str] == 0{
+			if dic[str] == 0 {
 				array = append(array, str)
 			}
 			dic[str] += count

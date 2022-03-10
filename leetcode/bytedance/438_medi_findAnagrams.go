@@ -1,15 +1,15 @@
 package main
 
 //438. 找到字符串中所有字母异位词
-//给定一个字符串 s 和一个非空字符串 p，找到 s 中所有是 p 的字母异位词的子串，返回这些子串的起始索引。
+//给定一个字符串s和一个非空字符串p，找到s中所有是p的字母异位词的子串，返回这些子串的起始索引。
 //
-//字符串只包含小写英文字母，并且字符串 s 和 p 的长度都不超过 20100。
+//字符串只包含小写英文字母，并且字符串s和 p的长度都不超过 20100。
 //
 //说明：
 //
 //字母异位词指字母相同，但排列不同的字符串。
 //不考虑答案输出的顺序。
-//示例 1:
+//示例1:
 //
 //输入:
 //s: "cbaebabacd" p: "abc"
@@ -20,7 +20,7 @@ package main
 //解释:
 //起始索引等于 0 的子串是 "cba", 它是 "abc" 的字母异位词。
 //起始索引等于 6 的子串是 "bac", 它是 "abc" 的字母异位词。
-// 示例 2:
+//示例 2:
 //
 //输入:
 //s: "abab" p: "ab"
@@ -37,7 +37,7 @@ package main
 func findAnagrams(s string, p string) []int {
 	dic := make([]int, 26)
 	for _, v := range p {
-		dic[v-'a'] ++
+		dic[v-'a']++
 	}
 
 	result := make([]int, 0)
@@ -46,7 +46,7 @@ func findAnagrams(s string, p string) []int {
 	dicS := make([]int, 26)
 	dp := make([][26]int, n+1)
 	for i := 0; i < len(s); i++ {
-		dicS[s[i]-'a'] ++
+		dicS[s[i]-'a']++
 		isValid := 0
 		for j := 0; j < 26; j++ {
 			dp[i+1][j] = dicS[j]

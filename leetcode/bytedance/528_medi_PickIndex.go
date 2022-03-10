@@ -6,13 +6,13 @@ import (
 )
 
 //528. 按权重随机选择
-//给定一个正整数数组 w ，其中 w[i] 代表下标 i 的权重（下标从 0 开始），请写一个函数 pickIndex ，它可以随机地获取下标 i，选取下标 i 的概率与 w[i] 成正比。
+//给定一个正整数数组w ，其中w[i]代表下标 i的权重（下标从 0 开始），请写一个函数pickIndex，它可以随机地获取下标 i，选取下标 i的概率与w[i]成正比。
 //
-//例如，对于 w = [1, 3]，挑选下标 0 的概率为 1 / (1 + 3) = 0.25 （即，25%），而选取下标 1 的概率为 3 / (1 + 3) = 0.75（即，75%）。
+//例如，对于 w = [1, 3]，挑选下标 0 的概率为 1 / (1 + 3)= 0.25 （即，25%），而选取下标 1 的概率为 3 / (1 + 3)= 0.75（即，75%）。
 //
 //也就是说，选取下标 i 的概率为 w[i] / sum(w) 。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -47,13 +47,13 @@ import (
 //[null,1,0,1,0,0]
 //......
 //诸若此类。
-// 
+//
 //
 //提示：
 //
 //1 <= w.length <= 10000
 //1 <= w[i] <= 10^5
-//pickIndex 将被调用不超过 10000 次
+//pickIndex将被调用不超过10000次
 
 //思路 前缀和，二分查找
 type Solution struct {
@@ -76,8 +76,8 @@ func Constructor(w []int) Solution {
 }
 
 func (this *Solution) PickIndex() int {
-	index := rand.Intn(this.Length)+1
-	return sort.SearchInts(this.Pool,index)
+	index := rand.Intn(this.Length) + 1
+	return sort.SearchInts(this.Pool, index)
 }
 
 /**

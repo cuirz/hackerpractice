@@ -9,7 +9,7 @@ package main
 //
 //返回一条能删除的边，使得剩下的图是有N个节点的有根树。若有多个答案，返回最后出现在给定二维数组的答案。
 //
-//示例 1:
+//示例1:
 //
 //输入: [[1,2], [1,3], [2,3]]
 //输出: [2,3]
@@ -34,7 +34,7 @@ package main
 
 func findRedundantDirectedConnection(edges [][]int) []int {
 	n := len(edges)
-	us := newUnionSet(n+1)
+	us := newUnionSet(n + 1)
 	parents := make([]int, n+1)
 	for i := range parents {
 		parents[i] = i
@@ -47,18 +47,18 @@ func findRedundantDirectedConnection(edges [][]int) []int {
 			confilct = v
 		} else {
 			parents[to] = from
-			if us.find(from) == us.find(to){
+			if us.find(from) == us.find(to) {
 				cycle = v
-			}else{
-				us.union(from,to)
+			} else {
+				us.union(from, to)
 			}
 		}
 	}
-	if confilct == nil{
+	if confilct == nil {
 		return cycle
 	}
-	if cycle != nil{
-		return []int{parents[confilct[1]],confilct[1]}
+	if cycle != nil {
+		return []int{parents[confilct[1]], confilct[1]}
 	}
 	return confilct
 }
@@ -66,21 +66,22 @@ func findRedundantDirectedConnection(edges [][]int) []int {
 type unionSet struct {
 	root []int
 }
-func newUnionSet(n int)unionSet{
-	root := make([]int,n)
-	for i:=range root{
+
+func newUnionSet(n int) unionSet {
+	root := make([]int, n)
+	for i := range root {
 		root[i] = i
 	}
 	return unionSet{root}
 }
-func (this unionSet)find(i int)int{
-	if this.root[i] != i{
+func (this unionSet) find(i int) int {
+	if this.root[i] != i {
 		this.root[i] = this.find(this.root[i])
 	}
 	return this.root[i]
 
 }
 
-func (this unionSet)union(from ,to int){
+func (this unionSet) union(from, to int) {
 	this.root[this.find(from)] = this.find(to)
 }

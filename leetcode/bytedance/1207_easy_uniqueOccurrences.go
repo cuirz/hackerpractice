@@ -1,11 +1,11 @@
 package main
 
 //1207. 独一无二的出现次数
-//给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。
+//给你一个整数数组arr，请你帮忙统计数组中每个数的出现次数。
 //
-//如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。
+//如果每个数的出现次数都是独一无二的，就返回true；否则返回 false。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -20,25 +20,25 @@ package main
 //
 //输入：arr = [-3,0,1,-3,1,1,1,-3,10,0]
 //输出：true
-// 
+//
 //
 //提示：
 //
-//1 <= arr.length <= 1000
+//1 <= arr.length<= 1000
 //-1000 <= arr[i] <= 1000
 
 func uniqueOccurrences(arr []int) bool {
 	dic := make(map[int]int)
 	for _, v := range arr {
-		dic[v] ++
+		dic[v]++
 	}
 	n := 50
 	count := make([]int, n)
 	for _, v := range dic {
-		if v >= n || count[v] > 0{
+		if v >= n || count[v] > 0 {
 			return false
 		}
-		count[v] ++
+		count[v]++
 	}
 	return true
 }

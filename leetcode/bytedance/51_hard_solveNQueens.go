@@ -4,11 +4,11 @@ import "strings"
 
 //51. N 皇后
 //n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
-//给定一个整数 n，返回所有不同的 n 皇后问题的解决方案。
+//给定一个整数 n，返回所有不同的n皇后问题的解决方案。
 //
-//每一种解法包含一个明确的 n 皇后问题的棋子放置方案，该方案中 'Q' 和 '.' 分别代表了皇后和空位。
+//每一种解法包含一个明确的n 皇后问题的棋子放置方案，该方案中 'Q' 和 '.' 分别代表了皇后和空位。
 //
-// 
+//
 //
 //示例：
 //
@@ -25,7 +25,7 @@ import "strings"
 //".Q.."]
 //]
 //解释: 4 皇后问题存在两个不同的解法。
-// 
+//
 //
 //提示：
 //
@@ -49,7 +49,7 @@ func solveNQueens(n int) [][]string {
 			}
 			res = append(res, line.String())
 		}
-		result = append(result,res)
+		result = append(result, res)
 	}
 	check := func(i, j int) bool {
 		for k := 0; k < len(queue); k++ {
@@ -90,6 +90,6 @@ func abs(x int) int {
 	return x
 }
 
-func main(){
+func main() {
 	solveNQueens(4)
 }

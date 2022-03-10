@@ -1,15 +1,15 @@
 package main
 
 //1269. 停在原地的方案数
-//有一个长度为 arrLen 的数组，开始有一个指针在索引 0 处。
+//有一个长度为arrLen的数组，开始有一个指针在索引0 处。
 //
 //每一步操作中，你可以将指针向左或向右移动 1 步，或者停在原地（指针不能被移动到数组范围外）。
 //
-//给你两个整数 steps 和 arrLen ，请你计算并返回：在恰好执行 steps 次操作以后，指针仍然指向索引 0 处的方案数。
+//给你两个整数steps 和arrLen ，请你计算并返回：在恰好执行steps次操作以后，指针仍然指向索引0 处的方案数。
 //
-//由于答案可能会很大，请返回方案数 模 10^9 + 7 后的结果。
+//由于答案可能会很大，请返回方案数 模10^9 + 7 后的结果。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -20,7 +20,7 @@ package main
 //不动，向右，向左
 //向右，不动，向左
 //不动，不动，不动
-//示例  2：
+//示例 2：
 //
 //输入：steps = 2, arrLen = 4
 //输出：2
@@ -31,17 +31,17 @@ package main
 //
 //输入：steps = 4, arrLen = 2
 //输出：8
-// 
+//
 //
 //提示：
 //
 //1 <= steps <= 500
-//1 <= arrLen <= 10^6
+//1 <= arrLen<= 10^6
 
 func numWays(steps int, arrLen int) int {
 	dp := make([][]int, steps+1)
 	col := min(steps, arrLen)
-	const mod = 1e9+7
+	const mod = 1e9 + 7
 	for i := range dp {
 		dp[i] = make([]int, col)
 	}

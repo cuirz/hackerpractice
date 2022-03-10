@@ -1,7 +1,7 @@
 package main
 
 //860. 柠檬水找零
-//在柠檬水摊上，每一杯柠檬水的售价为 5 美元。
+//在柠檬水摊上，每一杯柠檬水的售价为5美元。
 //
 //顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。
 //
@@ -9,7 +9,7 @@ package main
 //
 //注意，一开始你手头没有任何零钱。
 //
-//如果你能给每位顾客正确找零，返回 true ，否则返回 false 。
+//如果你能给每位顾客正确找零，返回true，否则返回 false。
 //
 //示例 1：
 //
@@ -26,23 +26,23 @@ package main
 //bills[i] 不是 5 就是 10 或是 20
 
 func lemonadeChange(bills []int) bool {
-	var five,ten int
-	for _,v :=range bills{
-		if v == 5{
-			five ++
-		}else if v == 10{
-			if five == 0{
+	var five, ten int
+	for _, v := range bills {
+		if v == 5 {
+			five++
+		} else if v == 10 {
+			if five == 0 {
 				return false
 			}
-			five --
-			ten ++
-		}else if v == 20{
-			if ten > 0{
-				ten --
+			five--
+			ten++
+		} else if v == 20 {
+			if ten > 0 {
+				ten--
 				v -= 10
 			}
-			c := v / 5 - 1
-			if five < c{
+			c := v/5 - 1
+			if five < c {
 				return false
 			}
 			five -= c

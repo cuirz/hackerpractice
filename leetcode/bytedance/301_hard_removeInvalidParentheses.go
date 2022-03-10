@@ -7,7 +7,7 @@ import (
 //301. 删除无效的括号
 //删除最小数量的无效括号，使得输入的字符串有效，返回所有可能的结果。
 //
-//说明: 输入可能包含了除 ( 和 ) 以外的字符。
+//说明: 输入可能包含了除(和)以外的字符。
 //
 //示例 1:
 //
@@ -48,21 +48,21 @@ func removeInvalidParentheses(s string) []string {
 		queue = queue[1:]
 		if isValid(top) {
 			result = append(result, top)
-		}else if len(result) == 0{
-			for i := 0;i <len(top);i++{
-				if top[i] == '(' || top[i] == ')'{
+		} else if len(result) == 0 {
+			for i := 0; i < len(top); i++ {
+				if top[i] == '(' || top[i] == ')' {
 					tmp := ""
-					if i < len(top)-1{
+					if i < len(top)-1 {
 						bd.Reset()
 						bd.WriteString(top[:i])
 						bd.WriteString(top[i+1:])
 						tmp = bd.String()
-					}else{
+					} else {
 						tmp = top[:i]
 					}
-					if set[tmp] == 0{
+					if set[tmp] == 0 {
 						set[tmp] = 1
-						queue = append(queue,tmp)
+						queue = append(queue, tmp)
 					}
 				}
 			}
@@ -71,8 +71,7 @@ func removeInvalidParentheses(s string) []string {
 	return result
 }
 
-func main(){
+func main() {
 	println(removeInvalidParentheses("((()"))
-
 
 }

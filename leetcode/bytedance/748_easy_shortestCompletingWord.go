@@ -9,7 +9,7 @@ import "unicode"
 //
 //在匹配 licensePlate 中的字母时：
 //
-//忽略 licensePlate 中的 数字和空格 。
+//忽略licensePlate 中的 数字和空格 。
 //不区分大小写。
 //如果某个字母在 licensePlate 中出现不止一次，那么该字母在补全词中的出现次数应当一致或者更多。
 //例如：licensePlate = "aBc 12c"，那么它的补全词应当包含字母 'a'、'b' （忽略大写）和两个 'c' 。可能的 补全词 有 "abccdef"、"caaacab" 以及 "cbca" 。
@@ -75,7 +75,7 @@ func shortestCompletingWord(licensePlate string, words []string) string {
 				break
 			}
 		}
-		if ok && (result == "" || len(word) < len(result)){
+		if ok && (result == "" || len(word) < len(result)) {
 			result = word
 		}
 	}

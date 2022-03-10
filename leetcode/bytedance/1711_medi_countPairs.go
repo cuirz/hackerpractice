@@ -9,7 +9,7 @@ package main
 //
 //注意，只要餐品下标不同，就可以认为是不同的餐品，即便它们的美味程度相同。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -22,7 +22,7 @@ package main
 //输入：deliciousness = [1,1,1,3,3,3,7]
 //输出：15
 //解释：大餐的美味程度组合为 3 种 (1,1) ，9 种 (1,3) ，和 3 种 (1,7) 。
-// 
+//
 //
 //提示：
 //
@@ -43,7 +43,7 @@ func countPairs(deliciousness []int) int {
 		for sum := 1; sum <= maxv; sum <<= 1 {
 			result += count[sum-v]
 		}
-		count[v] ++
+		count[v]++
 	}
-	return result % (1e9+7)
+	return result % (1e9 + 7)
 }

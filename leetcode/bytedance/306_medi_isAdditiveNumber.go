@@ -5,9 +5,9 @@ package main
 //
 //一个有效的 累加序列 必须 至少 包含 3 个数。除了最开始的两个数以外，字符串中的其他数都等于它之前两个数相加的和。
 //
-//给你一个只包含数字 '0'-'9' 的字符串，编写一个算法来判断给定输入是否是 累加数 。如果是，返回 true ；否则，返回 false 。
+//给你一个只包含数字'0'-'9'的字符串，编写一个算法来判断给定输入是否是 累加数 。如果是，返回 true ；否则，返回 false 。
 //
-//说明：累加序列里的数 不会 以 0 开头，所以不会出现 1, 2, 03 或者 1, 02, 3 的情况。
+//说明：累加序列里的数 不会 以 0 开头，所以不会出现1, 2, 03 或者1, 02, 3的情况。
 //
 //
 //
@@ -16,7 +16,7 @@ package main
 //输入："112358"
 //输出：true
 //解释：累加序列为: 1, 1, 2, 3, 5, 8 。1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8
-//示例 2：
+//示例2：
 //
 //输入："199100199"
 //输出：true
@@ -35,7 +35,7 @@ func isAdditiveNumber(num string) bool {
 	n := len(num)
 	add := func(a, b string) string {
 		var res []byte
-		var carry,cur int
+		var carry, cur int
 		for a != "" || b != "" || carry != 0 {
 			cur = carry
 			if a != "" {
@@ -75,7 +75,7 @@ func isAdditiveNumber(num string) bool {
 		return false
 	}
 	for s := 1; s < n-1; s++ {
-		if num[0] == '0' && s != 1{
+		if num[0] == '0' && s != 1 {
 			break
 		}
 		for e := s; e < n-1; e++ {
@@ -91,6 +91,6 @@ func isAdditiveNumber(num string) bool {
 	return false
 }
 
-func main(){
+func main() {
 	println(isAdditiveNumber("112358"))
 }

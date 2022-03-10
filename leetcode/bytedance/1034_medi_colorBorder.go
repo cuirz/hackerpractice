@@ -1,13 +1,13 @@
 package main
 
 //1034. 边界着色
-//给你一个大小为 m x n 的整数矩阵 grid ，表示一个网格。另给你三个整数 row、col 和 color 。网格中的每个值表示该位置处的网格块的颜色。
+//给你一个大小为 m x n 的整数矩阵 grid ，表示一个网格。另给你三个整数row、col 和 color 。网格中的每个值表示该位置处的网格块的颜色。
 //
 //当两个网格块的颜色相同，而且在四个方向中任意一个方向上相邻时，它们属于同一 连通分量 。
 //
 //连通分量的边界 是指连通分量中的所有与不在分量中的网格块相邻（四个方向上）的所有网格块，或者在网格的边界上（第一行/列或最后一行/列）的所有网格块。
 //
-//请你使用指定颜色 color 为所有包含网格块 grid[row][col] 的 连通分量的边界 进行着色，并返回最终的网格 grid 。
+//请你使用指定颜色color 为所有包含网格块grid[row][col] 的 连通分量的边界 进行着色，并返回最终的网格grid 。
 //
 //
 //
@@ -43,7 +43,7 @@ func colorBorder(grid [][]int, row int, col int, color int) [][]int {
 	visited[row][col] = true
 	origin := grid[row][col]
 	dir := []int{-1, 0, 1, 0, -1}
-	array := make([][]int,0)
+	array := make([][]int, 0)
 	var dfs func(x, y int)
 	dfs = func(x, y int) {
 		isBoard := false
@@ -57,11 +57,11 @@ func colorBorder(grid [][]int, row int, col int, color int) [][]int {
 			}
 		}
 		if isBoard {
-			array = append(array,[]int{x,y})
+			array = append(array, []int{x, y})
 		}
 	}
-	dfs(row,col)
-	for _,v := range array{
+	dfs(row, col)
+	for _, v := range array {
 		grid[v[0]][v[1]] = color
 	}
 
@@ -69,6 +69,6 @@ func colorBorder(grid [][]int, row int, col int, color int) [][]int {
 
 }
 
-func main(){
-	println(colorBorder([][]int{{1,1,1},{1,1,1},{1,1,1}},1,1,2))
+func main() {
+	println(colorBorder([][]int{{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 1, 1, 2))
 }

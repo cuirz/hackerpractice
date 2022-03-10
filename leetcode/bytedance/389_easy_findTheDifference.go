@@ -3,11 +3,11 @@ package main
 //389. 找不同
 //给定两个字符串 s 和 t，它们只包含小写字母。
 //
-//字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。
+//字符串t由字符串s随机重排，然后在随机位置添加一个字母。
 //
 //请找出在 t 中被添加的字母。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -26,7 +26,7 @@ package main
 //
 //输入：s = "ae", t = "aea"
 //输出："a"
-// 
+//
 //
 //提示：
 //
@@ -36,15 +36,15 @@ package main
 
 func findTheDifference(s string, t string) byte {
 	var dic [26]int
-	for _,v := range s{
+	for _, v := range s {
 		dic[v-'a']++
 	}
-	for _,v := range t{
-		dic[v-'a'] --
+	for _, v := range t {
+		dic[v-'a']--
 	}
-	for i,v := range dic{
-		if v < 0{
-			return byte(i +'a')
+	for i, v := range dic {
+		if v < 0 {
+			return byte(i + 'a')
 		}
 	}
 	return 0

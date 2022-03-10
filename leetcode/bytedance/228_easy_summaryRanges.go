@@ -14,7 +14,7 @@ import (
 //
 //"a->b" ，如果 a != b
 //"a" ，如果 a == b
-// 
+//
 //
 //示例 1：
 //
@@ -45,7 +45,7 @@ import (
 //
 //输入：nums = [0]
 //输出：["0"]
-// 
+//
 //
 //提示：
 //
@@ -62,10 +62,10 @@ func summaryRanges(nums []int) []string {
 		for i++; i < n && nums[i-1]+1 == nums[i]; i++ {
 		}
 		str := strconv.Itoa(nums[l])
-		if l < i - 1{
-			str = fmt.Sprintf("%s->%d",str,nums[i-1])
+		if l < i-1 {
+			str = fmt.Sprintf("%s->%d", str, nums[i-1])
 		}
-		result = append(result,str)
+		result = append(result, str)
 	}
 	return result
 }

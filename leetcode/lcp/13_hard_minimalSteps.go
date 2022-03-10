@@ -24,8 +24,8 @@ package main
 //
 //解释：注意终点也是可以通行的。
 //限制：
-//1 <= maze.length <= 100
-//1 <= maze[i].length <= 100
+//1 <= maze.length<= 100
+//1 <= maze[i].length<= 100
 //maze[i].length == maze[j].length
 //S 和 T 有且只有一个
 //0 <= M的数量 <= 16
@@ -91,8 +91,8 @@ func minimalSteps(maze []string) int {
 			oy := stones[j][1]
 			if startDist[ox][oy] != -1 && tPath[i][ox][oy] != -1 {
 				//minimum = minPositive(minimum, startDist[ox][oy]+tPath[i][ox][oy])
-				if minimum == -1 || minimum > startDist[ox][oy]+tPath[i][ox][oy]{
-					minimum = startDist[ox][oy]+tPath[i][ox][oy]
+				if minimum == -1 || minimum > startDist[ox][oy]+tPath[i][ox][oy] {
+					minimum = startDist[ox][oy] + tPath[i][ox][oy]
 				}
 			}
 		}
@@ -105,8 +105,8 @@ func minimalSteps(maze []string) int {
 				oy := stones[j][1]
 				if tPath[i][ox][oy] != -1 {
 					//minimum = minPositive(minimum, tPath[i][ox][oy]+tPath[k][ox][oy])
-					if minimum == -1 || minimum > tPath[i][ox][oy]+tPath[k][ox][oy]{
-						minimum = tPath[i][ox][oy]+tPath[k][ox][oy]
+					if minimum == -1 || minimum > tPath[i][ox][oy]+tPath[k][ox][oy] {
+						minimum = tPath[i][ox][oy] + tPath[k][ox][oy]
 					}
 				}
 			}
@@ -146,8 +146,8 @@ func minimalSteps(maze []string) int {
 					if state&(1<<j) == 0 {
 						nextState := state | (1 << j)
 						//dp[nextState][j] = minPositive(dp[nextState][j], dp[state][i]+dist[i][j])
-						if dp[nextState][j] == -1 || dp[nextState][j] > dp[state][i]+dist[i][j]{
-							dp[nextState][j] = dp[state][i]+dist[i][j]
+						if dp[nextState][j] == -1 || dp[nextState][j] > dp[state][i]+dist[i][j] {
+							dp[nextState][j] = dp[state][i] + dist[i][j]
 						}
 					}
 				}
@@ -160,8 +160,8 @@ func minimalSteps(maze []string) int {
 	result := -1
 	for i := 0; i < tCount; i++ {
 		//result = minPositive(result, dp[allActivatedState][i]+dist[i][tCount+1])
-		if result == -1 || result > dp[allActivatedState][i]+dist[i][tCount+1]{
-			result = dp[allActivatedState][i]+dist[i][tCount+1]
+		if result == -1 || result > dp[allActivatedState][i]+dist[i][tCount+1] {
+			result = dp[allActivatedState][i] + dist[i][tCount+1]
 		}
 	}
 	return result
@@ -194,7 +194,7 @@ func bfs(x, y int, maze []string) [][]int {
 }
 
 func minPositive(x, y int) int {
-	println(x,y)
+	println(x, y)
 	if x*y > 0 {
 		return min(x, y)
 	}

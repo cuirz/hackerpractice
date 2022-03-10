@@ -4,7 +4,7 @@ package main
 //给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
 //
 //例如：
-//给定二叉树 [3,9,20,null,null,15,7],
+//给定二叉树[3,9,20,null,null,15,7],
 //
 //3
 /// \
@@ -33,7 +33,7 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 	result := make([][]int, 0)
 	var search func(node *TreeNode, d int)
 	search = func(node *TreeNode, d int) {
-		if node == nil{
+		if node == nil {
 			return
 		}
 		if len(result) <= d {

@@ -5,17 +5,17 @@ import "sort"
 //剑指 Offer 38. 字符串的排列
 //输入一个字符串，打印出该字符串中字符的所有排列。
 //
-// 
+//
 //
 //你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
 //
-// 
+//
 //
 //示例:
 //
 //输入：s = "abc"
 //输出：["abc","acb","bac","bca","cab","cba"]
-// 
+//
 //
 //限制：
 //
@@ -37,10 +37,10 @@ func permutation(s string) []string {
 			return
 		}
 		for i, _ := range visited {
-			if visited[i] || (i > 0 && !visited[i-1] && array[i-1] == array[i]){
+			if visited[i] || (i > 0 && !visited[i-1] && array[i-1] == array[i]) {
 				continue
 			}
-				visited[i] = true
+			visited[i] = true
 			dic = append(dic, array[i])
 			dfs(x + 1)
 			dic = dic[:len(dic)-1]

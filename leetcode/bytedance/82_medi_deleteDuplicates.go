@@ -1,13 +1,13 @@
 package main
 
 //82. 删除排序链表中的重复元素 II
-//给定一个排序链表，删除所有含有重复数字的节点，只保留原始链表中 没有重复出现 的数字。
+//给定一个排序链表，删除所有含有重复数字的节点，只保留原始链表中没有重复出现的数字。
 //
-//示例 1:
+//示例1:
 //
 //输入: 1->2->3->3->4->4->5
 //输出: 1->2->5
-//示例 2:
+//示例2:
 //
 //输入: 1->1->1->2->3
 //输出: 2->3
@@ -20,7 +20,7 @@ package main
  * }
  */
 func deleteDuplicates(head *ListNode) *ListNode {
-	if head == nil{
+	if head == nil {
 		return nil
 	}
 	root := &ListNode{}
@@ -37,7 +37,7 @@ func deleteDuplicates(head *ListNode) *ListNode {
 			pre = cur
 		}
 		cur = next
-		if next != nil{
+		if next != nil {
 			next = next.Next
 		}
 

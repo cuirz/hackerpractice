@@ -5,7 +5,7 @@ package main
 //
 //不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
 //
-// 
+//
 //
 //说明:
 //
@@ -21,9 +21,9 @@ package main
 //// 在函数里修改输入数组对于调用者是可见的。
 //// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
 //for (int i = 0; i < len; i++) {
-//    print(nums[i]);
+//  print(nums[i]);
 //}
-// 
+//
 //示例 1：
 //
 //输入：nums = [1,1,2]
@@ -34,7 +34,7 @@ package main
 //输入：nums = [0,0,1,1,1,2,2,3,3,4]
 //输出：5, nums = [0,1,2,3,4]
 //解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
-// 
+//
 //
 //提示：
 //
@@ -46,14 +46,14 @@ func removeDuplicates(nums []int) int {
 	n := len(nums)
 	index := 0
 	for i := 1; i < n; i++ {
-		if nums[i] != nums[index]{
+		if nums[i] != nums[index] {
 			index++
 			nums[index] = nums[i]
 		}
 	}
-	return index+1
+	return index + 1
 }
 
-func main(){
-	removeDuplicates([]int{1,1,2})
+func main() {
+	removeDuplicates([]int{1, 1, 2})
 }

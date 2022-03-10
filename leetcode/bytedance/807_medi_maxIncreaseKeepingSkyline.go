@@ -29,7 +29,7 @@ package main
 //说明:
 //
 //1 < grid.length = grid[0].length <= 50。
-// grid[i][j] 的高度范围是： [0, 100]。
+//grid[i][j] 的高度范围是： [0, 100]。
 //一座建筑物占据一个grid[i][j]：换言之，它们是 1 x 1 x grid[i][j] 的长方体。
 
 func maxIncreaseKeepingSkyline(grid [][]int) int {

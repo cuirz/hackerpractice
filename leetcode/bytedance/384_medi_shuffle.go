@@ -13,7 +13,7 @@ import (
 //Solution(int[] nums) 使用整数数组 nums 初始化对象
 //int[] reset() 重设数组到它的初始状态并返回
 //int[] shuffle() 返回数组随机打乱后的结果
-// 
+//
 //
 //示例：
 //
@@ -28,7 +28,7 @@ import (
 //solution.shuffle();    // 打乱数组 [1,2,3] 并返回结果。任何 [1,2,3]的排列返回的概率应该相同。例如，返回 [3, 1, 2]
 //solution.reset();      // 重设数组到它的初始状态 [1, 2, 3] 。返回 [1, 2, 3]
 //solution.shuffle();    // 随机返回数组 [1, 2, 3] 打乱后的结果。例如，返回 [1, 3, 2]
-// 
+//
 //
 //提示：
 //
@@ -38,33 +38,29 @@ import (
 //最多可以调用 5 * 10^4 次 reset 和 shuffle
 
 type Solution struct {
-	array,origin []int
+	array, origin []int
 }
-
 
 func Constructor(nums []int) Solution {
 	return Solution{
-		array: append([]int{},nums...),
+		array:  append([]int{}, nums...),
 		origin: nums,
 	}
 }
 
-
 func (this *Solution) Reset() []int {
-	copy(this.array,this.origin)
+	copy(this.array, this.origin)
 	return this.array
 }
 
-
 func (this *Solution) Shuffle() []int {
-	n:=len(this.array)
-	for i,_ := range this.array{
-		j := i+rand.Intn(n-i)
-		this.array[i],this.array[j] = this.array[j],this.array[i]
+	n := len(this.array)
+	for i, _ := range this.array {
+		j := i + rand.Intn(n-i)
+		this.array[i], this.array[j] = this.array[j], this.array[i]
 	}
 	return this.array
 }
-
 
 /**
  * Your Solution object will be instantiated and called as such:

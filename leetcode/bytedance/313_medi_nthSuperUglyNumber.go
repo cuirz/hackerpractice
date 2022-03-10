@@ -9,7 +9,7 @@ import "math"
 //
 //题目数据保证第 n 个 超级丑数 在 32-bit 带符号整数范围内。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -21,7 +21,7 @@ import "math"
 //输入：n = 1, primes = [2,3,5]
 //输出：1
 //解释：1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
-// 
+//
 //提示：
 //
 //1 <= n <= 106
@@ -50,7 +50,7 @@ func nthSuperUglyNumber(n int, primes []int) int {
 		dp[i] = minNum
 		for j, v := range nums {
 			if v == minNum {
-				points[j] ++
+				points[j]++
 			}
 		}
 	}

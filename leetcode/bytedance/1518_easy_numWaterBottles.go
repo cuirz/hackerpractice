@@ -37,8 +37,8 @@ package main
 //
 //提示：
 //
-//1 <= numBottles <= 100
-//2 <= numExchange <= 100
+//1 <=numBottles <= 100
+//2 <=numExchange <= 100
 
 func numWaterBottles(numBottles int, numExchange int) int {
 	var result, space int

@@ -5,10 +5,10 @@ package main
 //
 //一个数独的解法需遵循如下规则：
 //
-//数字 1-9 在每一行只能出现一次。
-//数字 1-9 在每一列只能出现一次。
-//数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
-//空白格用 '.' 表示。
+//数字1-9在每一行只能出现一次。
+//数字1-9在每一列只能出现一次。
+//数字1-9在每一个以粗实线分隔的3x3宫内只能出现一次。
+//空白格用'.'表示。
 
 func solveSudoku(board [][]byte) {
 	var col [9][9]bool
@@ -30,7 +30,7 @@ func solveSudoku(board [][]byte) {
 	}
 	var dfs func(index int) bool
 	dfs = func(index int) bool {
-		if index == len(space){
+		if index == len(space) {
 			return true
 		}
 		i, j := space[index][0], space[index][1]

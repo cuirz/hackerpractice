@@ -5,7 +5,7 @@ package main
 //
 //单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。
 //
-// 
+//
 //
 //示例:
 //
@@ -19,7 +19,7 @@ package main
 //给定 word = "ABCCED", 返回 true
 //给定 word = "SEE", 返回 true
 //给定 word = "ABCB", 返回 false
-// 
+//
 //
 //提示：
 //
@@ -60,9 +60,9 @@ func exist(board [][]byte, word string) bool {
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < m; j++ {
-			if !isMatched{
-				dfs(i,j,0)
-			}else{
+			if !isMatched {
+				dfs(i, j, 0)
+			} else {
 				return true
 			}
 		}

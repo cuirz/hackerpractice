@@ -14,7 +14,7 @@ import "math"
 //
 //返回从 S 拆分出来的任意一组斐波那契式的序列块，如果不能拆分则返回 []。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -28,24 +28,24 @@ func splitIntoFibonacci(S string) []int {
 	n := len(S)
 	var backtrack func(index, sum, pre int) bool
 	backtrack = func(index, sum, pre int) bool {
-		if index == n{
+		if index == n {
 			return len(result) >= 3
 		}
 		cur := 0
 
 		for i := index; i < n; i++ {
-			if i > index && S[index] == '0'{
+			if i > index && S[index] == '0' {
 				break
 			}
-			cur = cur * 10 + int(S[i]-'0')
-			if cur > math.MaxInt32{
+			cur = cur*10 + int(S[i]-'0')
+			if cur > math.MaxInt32 {
 				break
 			}
-			if len(result) >= 2{
-				if cur < sum{
+			if len(result) >= 2 {
+				if cur < sum {
 					continue
 				}
-				if cur > sum{
+				if cur > sum {
 					break
 				}
 			}

@@ -5,7 +5,7 @@ package main
 //
 //回文串 是正着读和反着读都一样的字符串。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -15,7 +15,7 @@ package main
 //
 //输入：s = "a"
 //输出：[["a"]]
-// 
+//
 //
 //提示：
 //
@@ -58,10 +58,7 @@ func partition(s string) [][]string {
 	dfs(0)
 	return result
 
-
 }
-
-
 
 func main() {
 	res := partition("aab")

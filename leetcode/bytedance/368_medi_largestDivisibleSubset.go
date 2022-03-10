@@ -8,7 +8,7 @@ import "sort"
 //answer[j] % answer[i] == 0
 //如果存在多个有效解子集，返回其中任何一个均可。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -19,7 +19,7 @@ import "sort"
 //
 //输入：nums = [1,2,4,8]
 //输出：[1,2,4,8]
-// 
+//
 //
 //提示：
 //
@@ -49,12 +49,12 @@ func largestDivisibleSubset(nums []int) []int {
 	if maxCount == 1 {
 		return []int{nums[0]}
 	}
-	result := make([]int,0)
+	result := make([]int, 0)
 	for i := n - 1; i > -1 && maxCount > 0; i-- {
-		if dp[i] == maxCount && maxVal % nums[i] == 0{
-			result = append(result,nums[i])
+		if dp[i] == maxCount && maxVal%nums[i] == 0 {
+			result = append(result, nums[i])
 			maxVal = nums[i]
-			maxCount --
+			maxCount--
 		}
 	}
 	return result

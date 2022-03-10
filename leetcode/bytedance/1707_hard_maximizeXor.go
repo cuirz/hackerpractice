@@ -9,7 +9,7 @@ import "math"
 //
 //返回一个整数数组 answer 作为查询的答案，其中 answer.length == queries.length 且 answer[i] 是第 i 个查询的答案。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -23,7 +23,7 @@ import "math"
 //
 //输入：nums = [5,2,4,6,6,3], queries = [[12,4],[8,1],[6,3]]
 //输出：[15,-1,5]
-// 
+//
 //
 //提示：
 //

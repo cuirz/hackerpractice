@@ -11,13 +11,13 @@ import (
 //
 //注意：输出结果可能非常大，所以你需要返回一个字符串而不是整数。
 //
-// 
+//
 //
 //示例 1：
 //
 //输入：nums = [10,2]
 //输出："210"
-//示例 2：
+//示例2：
 //
 //输入：nums = [3,30,34,5,9]
 //输出："9534330"
@@ -29,7 +29,7 @@ import (
 //
 //输入：nums = [10]
 //输出："10"
-// 
+//
 //
 //提示：
 //
@@ -44,15 +44,13 @@ func largestNumber(nums []int) string {
 	})
 	var result strings.Builder
 	for i, v := range nums {
-		if i == 0 && v == 0{
+		if i == 0 && v == 0 {
 			return "0"
 		}
 		result.WriteString(strconv.Itoa(v))
 	}
 	return result.String()
 }
-
-
 
 func main() {
 	println(largestNumber([]int{3, 30, 34, 5, 9}))

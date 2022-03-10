@@ -11,7 +11,7 @@ package main
 //}
 //填充它的每个 next 指针，让这个指针指向其下一个右侧节点。如果找不到下一个右侧节点，则将 next 指针设置为 NULL。
 //
-//初始状态下，所有 next 指针都被设置为 NULL。
+//初始状态下，所有next 指针都被设置为 NULL。
 
 type Node struct {
 	Val   int
@@ -22,22 +22,22 @@ type Node struct {
 
 func connect(root *Node) *Node {
 	deep := root
-	for deep != nil{
-		var start,last *Node
+	for deep != nil {
+		var start, last *Node
 		next := deep
-		help := func(n *Node){
-			if n == nil{
+		help := func(n *Node) {
+			if n == nil {
 				return
 			}
-			if start == nil{
+			if start == nil {
 				start = n
 			}
-			if last != nil{
+			if last != nil {
 				last.Next = n
 			}
 			last = n
 		}
-		for next != nil{
+		for next != nil {
 			help(next.Left)
 			help(next.Right)
 			next = next.Next

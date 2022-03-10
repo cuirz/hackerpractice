@@ -1,7 +1,7 @@
 package main
 
 //48. 旋转图像
-//给定一个 n × n 的二维矩阵表示一个图像。
+//给定一个 n×n 的二维矩阵表示一个图像。
 //
 //将图像顺时针旋转 90 度。
 //
@@ -47,7 +47,7 @@ func rotate(matrix [][]int) {
 	for x := 0; x < n>>1; x++ {
 		for y := x; y < n-x-1; y++ {
 			x1 := y
-			y1 := n-1-x
+			y1 := n - 1 - x
 			swap := matrix[x][y]
 			for x1 != x || y1 != y {
 				matrix[x1][y1], swap = swap, matrix[x1][y1]
@@ -60,11 +60,11 @@ func rotate(matrix [][]int) {
 	println(matrix)
 }
 
-func main(){
+func main() {
 	rotate([][]int{
-		{1,2,3},
-		{4,5,6},
-		{7,8,9},
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
 	})
 }
 

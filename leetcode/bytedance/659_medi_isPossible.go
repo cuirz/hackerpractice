@@ -5,7 +5,7 @@ package main
 //
 //如果可以完成上述分割，则返回 true ；否则，返回 false 。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -24,7 +24,7 @@ func isPossible(nums []int) bool {
 	count := make(map[int]int)
 	bucket := make(map[int]int)
 	for _, v := range nums {
-		count[v] ++
+		count[v]++
 	}
 
 	for _, v := range nums {
@@ -32,9 +32,9 @@ func isPossible(nums []int) bool {
 			continue
 		}
 		if count[v] > 0 && bucket[v-1] > 0 {
-			bucket[v-1] --
-			bucket[v] ++
-			count[v] --
+			bucket[v-1]--
+			bucket[v]++
+			count[v]--
 		} else if count[v] > 0 && count[v+1] > 0 && count[v+2] > 0 {
 			count[v]--
 			count[v+1]--

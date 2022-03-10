@@ -5,7 +5,7 @@ package main
 //
 //你可以按任意顺序返回答案。
 //
-// 
+//
 //
 //示例 1：
 //
@@ -15,7 +15,7 @@ package main
 //
 //输入：["cool","lock","cook"]
 //输出：["c","o"]
-// 
+//
 //
 //提示：
 //
@@ -28,7 +28,7 @@ func commonChars(A []string) []string {
 	for i, w := range A {
 		var dic [26]int
 		for _, v := range w {
-			dic[v-'a'] ++
+			dic[v-'a']++
 		}
 		for j := 0; j < 26; j++ {
 			if i == 0 {
@@ -46,7 +46,6 @@ func commonChars(A []string) []string {
 	}
 	return result
 }
-
 
 func main() {
 	commonChars([]string{"bella", "label", "roller"})

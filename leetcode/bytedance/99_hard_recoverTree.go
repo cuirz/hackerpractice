@@ -4,39 +4,39 @@ package main
 //二叉搜索树中的两个节点被错误地交换。
 //
 //请在不改变其结构的情况下，恢复这棵树。
-//示例 1:
+//示例1:
 //
 //输入: [1,3,null,null,2]
 //
-//   1
-//  /
-// 3
-//  \
-//   2
+//  1
+// /
+//3
+// \
+//  2
 //
 //输出: [3,1,null,null,2]
 //
-//   3
-//  /
-// 1
-//  \
-//   2
-//示例 2:
+//  3
+// /
+//1
+// \
+//  2
+//示例2:
 //输入: [3,1,4,null,null,2]
 //
 //3
 /// \
 //1   4
-//   /
-//  2
+//  /
+// 2
 //
 //输出: [2,1,4,null,null,3]
 //
 //2
 /// \
 //1   4
-//   /
-// 3
+//  /
+//3
 //进阶:
 //
 //使用 O(n) 空间复杂度的解法很容易实现。
@@ -56,7 +56,7 @@ package main
  * }
  */
 func recoverTree(root *TreeNode) {
-	var pre,x,y *TreeNode
+	var pre, x, y *TreeNode
 	stack := make([]*TreeNode, 0)
 
 	for len(stack) > 0 || root != nil {
@@ -66,11 +66,11 @@ func recoverTree(root *TreeNode) {
 		}
 		root = stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
-		if pre != nil && pre.Val > root.Val{
+		if pre != nil && pre.Val > root.Val {
 			y = root
-			if x == nil{
+			if x == nil {
 				x = pre
-			}else{
+			} else {
 				break
 			}
 
@@ -79,5 +79,5 @@ func recoverTree(root *TreeNode) {
 		pre = root
 		root = root.Right
 	}
-	x.Val,y.Val = y.Val,x.Val
+	x.Val, y.Val = y.Val, x.Val
 }

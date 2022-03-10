@@ -14,10 +14,10 @@ import (
 //
 //返回规则如下：
 //
-//如果 version1 > version2 返回 1，
-//如果 version1 < version2 返回 -1，
+//如果version1>version2返回1，
+//如果version1<version2 返回 -1，
 //除此之外返回 0。
-// 
+//
 //
 //示例 1：
 //
@@ -42,7 +42,7 @@ import (
 //
 //输入：version1 = "7.5.2.4", version2 = "7.5.3"
 //输出：-1
-// 
+//
 //
 //提示：
 //
