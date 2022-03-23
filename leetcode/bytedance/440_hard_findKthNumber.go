@@ -20,6 +20,8 @@ package main
 //
 //1 <= k <= n <= 10^9
 
+//思路  前缀树模型
+
 func findKthNumber(n int, k int) int {
 	getChildren := func(value int) (children int) {
 		first, last := value, value
